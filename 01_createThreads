@@ -1,0 +1,13 @@
+import threading
+
+def worker(num):
+    # Threaded Worker function
+    print(num)
+    return
+
+threads = []
+for i in range(5):
+    t = threading.Thread(target=worker,args=(i,))
+    threads.append(t)
+    # Run the thread
+    t.start()
